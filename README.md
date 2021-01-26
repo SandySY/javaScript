@@ -3,7 +3,7 @@
 # JavaScript 系列 **经验笔记**
 
 ## 阅读目录
--  JavaScript 原型、原型链、继承
+-  [JavaScript 原型、原型链、继承](https://github.com/SandySY/javaScript/tree/master/prototype-inherit)
 -  [JavaScript 词法作用域及作用域链](https://github.com/SandySY/javaScript/tree/master/lexical-scope)
 -  [JavaScript This （ Context ） 之 完全拿下](https://github.com/SandySY/javaScript/tree/master/this-context)
 -  JavaScript 异步任务（微、宏）剖析
@@ -29,6 +29,8 @@ Coding得心应手的时候，想着去写写数据交互，自己任务没问�
 ## 想法初衷
 -----
 抽时间梳理一下符合前端工程师成长路线的知识脉络，尽可能给行业多共享一些经验总结，同时也能系统回顾和巩固自身。
+
+ps: Github 由于图床加载问题， 如果无法查看图片，建议clone后本地查阅，还可以顺便使用练习代码哦！
 
 > 为了方便阅读理解，本系列代码已经上传 [Github](https://github.com/SandySY/javaScript)  [掘金](https://juejin.cn/user/3421335916911527)       
 文中如有错误，欢迎在评论区指正，如果有所帮助，欢迎点赞和关注！

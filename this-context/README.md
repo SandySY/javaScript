@@ -1,6 +1,7 @@
 # JavaScript This （ Context ） 之 完全拿下
 
 ![image](https://github.com/SandySY/javaScript/this-context/js-this.png)
+![](https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/c1126d245d794879b9a496b0a2334315~tplv-k3u1fbpfcp-watermark.image)
 
 > 如何正确判断 this？  
 > 普通函数的 this 如何改变？（哪些工具函数如何工作？）  
@@ -147,5 +148,6 @@ obj2.funThis(); // funThis this is obj2
 > 认真揣摩，多看（书籍，mdn 等）多练（coding | test）。  
 > 谁也不笨，谁也不见得多聪明，始终坚信，保持每天进步一点点，这就够了！
 
-为了方便阅读理解，本文代码已经上传[Github](https://github.com/SandySY/javaScript)  
+为了方便阅读理解，本文代码已经上传[Github](https://github.com/SandySY/javaScript)
+[掘金社区](https://juejin.cn/post/6918927493046992910)  
 文中如有错误，欢迎在评论区指正，如果有所帮助，欢迎点赞和关注

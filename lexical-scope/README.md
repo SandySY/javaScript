@@ -6,6 +6,7 @@ highlight:
 ---
 
 ![image](https://github.com/SandySY/javaScript/lexical-scope/example3.png)
+![](https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/53f7c2d04e344a2a93d62f1b9e0edc0a~tplv-k3u1fbpfcp-watermark.image)
 
 # JavaScript 词法作用域及作用域链
 
@@ -50,6 +51,7 @@ foo( 2 ); // 2 4 12
 
 在这个例子中有三个逐级嵌套的作用域。为了帮助理解，可以将它们想象成几个逐级包含的气泡
 ![image](https://github.com/SandySY/javaScript/lexical-scope/example1.png)
+![](https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/a9d1c5bb8edd432b9da192474f69fdc6~tplv-k3u1fbpfcp-watermark.image)
 作用域气泡由其对应的作用域块代码写在哪里决定，它们是逐级包含的
 
 气泡 1 包含着整个全局作用域，其中只有一个标识符：foo
@@ -131,5 +133,5 @@ bar();
 
 两种作用域的区别，简而言之，词法作用域是在定义时确定的，而动态作用域是在运行时确定的。JavaScript 函数的执行用到词法作用域链，这个作用域链是在函数定义的时候创建的，这种绑定在任何时候执行都有效。
 
-> 为了方便阅读理解，本文代码已经上传[Github](https://github.com/SandySY/javaScript/tree/master/lexical-scope/)  
+> 为了方便阅读理解，本文代码已经上传[Github](https://github.com/SandySY/javaScript/tree/master/lexical-scope/) [掘金社区](https://juejin.cn/post/6917150828633686030)  
 > 文中如有错误，欢迎在评论区指正，如果有所帮助，欢迎点赞和关注

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>this 练习</title>
+  </head>
+  <body>
+    <script>
+      /*
+       * 谈谈你对this的了解及应用场景?
+       *   + this的五种情况分析
+       *     this执行主体，谁把它执行的「和在哪创建&在哪执行都没有必然的关系」
+       *     Q1:函数执行，看方法前面是否有“点”，没有“点”，this是window「严格模式下是undefined」，有“点”，“点”前面是谁this就是谁
+       *     Q2:给当前元素的某个事件行为绑定方法，当事件行为触发，方法中的this是当前元素本身「排除attachEvent」
+       *     Q3:构造函数体中的this是当前类的实例
+       *     Q4:箭头函数中没有执行主体，所用到的this都是其所处上下文中的this
+       *     Q5:可以基于Function.prototype上的call/apply/bind去改变this指向
+       *   + 手撕call/bind源码
+       *   + 掌握this的好玩应用：鸭子类型
+       */
+
+      /* //  01
+      let foo = function () {
+        console.log(this);
+      };
+      let obj = {
+        name: "OBJ",
+        fn: foo,
+      };
+      foo();
+      obj.fn();
+
+      // Q2
+      document.addEventListener("click", function () {
+        console.log(this);
+      });
+
+      // Q3
+      function Factory() {
+        this.name = "hah";
+        this.age = 16;
+        console.log(this);
+      }
+      let f = new Factory();
+
+      // Q4
+      let demo = {
+        name: "DEMO",
+        fn() {
+          console.log(this);
+
+          setTimeout(function () {
+            console.log(this);
+          }, 1000);
+
+          setTimeout(() => {
+            console.log(this);
+          }, 2000);
+        },
+      };
+      demo.fn(); */
+
+      // Q5
+      function func(x, y) {
+        console.log(this, x, y, arguments);
+      }
+      let obj = {
+        name: "obj",
+      };
+
+      Function.prototype.call = function call(content, ...params) {
+        let self = this,
+          key = Symbol("key"),
+          result;
+        console.log("-----diy call----");
+        content == null ? (context = window) : null;
+        !/^(object|function)$/.test(typeof content)
+          ? (content = Object(content))
+          : null;
+        content[key] = self;
+        result = content[key](...params);
+        delete content[key];
+        return result;
+      };
+
+      Function.prototype.apply = function apply(content, args) {
+        let self = this,
+          key = Symbol("key"),
+          result;
+        console.log("-----diy apply----");
+        if (content == null) content = window;
+        if (!/^(object|function)$/.test(typeof content)) {
+          content = Object(content);
+        }
+        content[key] = self;
+        result = content[key](...args);
+        delete content[key];
+        return result;
+      };
+
+      Function.prototype.bind = function bind(content, ...params) {
+        let self = this;
+        return function proxy(...args) {
+          self.apply(content, [...params, ...args]);
+        };
+      };
+
+      func.call(obj, 100, 200);
+      func.apply(obj, [100, 200]);
+      document.addEventListener("click", func.bind(obj, 65, 99, 656));
+    </script>
+  </body>
+</html>
